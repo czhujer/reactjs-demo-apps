@@ -10,28 +10,31 @@
     <!-- Načtení React.js -->
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Načtení Babel překladače pro JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 
 <body>
     <!-- Kořen naší komponentové struktury -->
     <div id="root"></div>
 
-    <!-- JS kód naší aplikace za použití knihovny React -->
-    <script>
+    <!-- Babel kód naší aplikace s podporou JSX a za použití knihovny React -->
+    <script type="text/babel">
         // Definice React komponenty
         class HelloWorld extends React.Component {
             render() { // Vykreslení komponenty
-                // Vykreslení vrátí element <h1> s textem "Hello World"
-                return React.createElement('h1', null, 'Hello World!');
+                return <h1>Hello, world! Vol2</h1>;
             }
         }
 
         // Vykreslení instance komponenty do HTML struktury
         ReactDOM.render(
-            React.createElement(HelloWorld), // Vytvoření komponenty
+            <HelloWorld />, // Vytvoření komponenty
             document.getElementById('root')  // Připojení do kořene aplikace
         );
     </script>
 </body>
 
 </html>
+
